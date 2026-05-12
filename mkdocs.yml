@@ -1,0 +1,41 @@
+site_name: Hama rex developer tips
+
+site_dir: 'public'
+
+nav:
+  - ホーム: index.md
+  - はじめに: getting-started.md
+  - チュートリアル:
+      - 基礎編: tutorial/basics.md
+      - 応用編: tutorial/advanced.md
+  - リファレンス: reference.md
+
+theme:
+  name: material
+
+  features:
+    - content.code.copy
+
+  palette:
+    primary: teal
+    #scheme: slate
+    scheme: indigo
+
+  palette:
+    # ライトモード
+    - media: '(prefers-color-scheme: light)'
+      scheme: default
+      primary: indigo
+      toggle:
+        icon: material/brightness-7
+        name: ダークモードに切り替え
+    # ダークモード
+    - media: '(prefers-color-scheme: dark)'
+      scheme: slate
+      primary: indigo
+      toggle:
+        icon: material/brightness-4
+        name: ライトモードに切り替え
+
+
+copyright: Copyright © 2026 HAMA-REX-Developer
