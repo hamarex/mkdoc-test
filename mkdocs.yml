@@ -1,41 +1,70 @@
-site_name: Hama rex developer tips
-
-site_dir: 'public'
-
-nav:
-  - ホーム: index.md
-  - はじめに: getting-started.md
-  - チュートリアル:
-      - 基礎編: tutorial/basics.md
-      - 応用編: tutorial/advanced.md
-  - リファレンス: reference.md
+site_name: DaCデモ用
+site_description: 戦略的ドキュメント管理システム
 
 theme:
   name: material
-
+  icon:
+    logo: material/file-document-edit
+  language: ja
   features:
-    - content.code.copy
-
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.share
+    - content.tabs.link  # タブの連動
+    - content.tooltips   # ツールチップ
+    - content.code.copy  # ← これを追加するだけでコピーボタンが出現
+    - content.code.annotate # ついでに注釈機能も入れる
   palette:
-    primary: teal
-    #scheme: slate
-    scheme: indigo
-
-  palette:
-    # ライトモード
-    - media: '(prefers-color-scheme: light)'
+    - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: indigo
       toggle:
-        icon: material/brightness-7
-        name: ダークモードに切り替え
-    # ダークモード
-    - media: '(prefers-color-scheme: dark)'
+        icon: material/toggle-switch
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: indigo
       toggle:
-        icon: material/brightness-4
-        name: ライトモードに切り替え
+        icon: material/toggle-switch-off-outline
+        name: Switch to light mode
+
+markdown_extensions:
+  - admonition          # 警告・注釈
+  - pymdownx.details    # 折りたたみ表示
+  - pymdownx.superfences: # Mermaid図面用
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - tables
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - attr_list
+  - abbr
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: true 
+copyright: Copyright &copy; 2027 HamaRex-Development
 
 
-copyright: Copyright © 2026 HAMA-REX-Developer
+nav:
+  - ホーム: index.md
+  - 規定:
+    - A規定: kitei/a.md
+  - 経営戦略:
+    - IT投資ロードマップ: strategy/roadmap.md
+    - 課題と解決策: strategy/pain_points.md
+  - 技術ガバナンス:
+    - 開発標準: tech/standards.md
+    - セキュリティ規定: tech/security.md
+  - 運用プロセス:
+    - 更新フロー: operation/workflow.md
